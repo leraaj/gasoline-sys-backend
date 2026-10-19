@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://gasoline-sys.onrender.com",
+    origin: ["https://gasoline-sys.onrender.com", "*"],
   }),
 );
 app.use(express.json());
