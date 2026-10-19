@@ -9,7 +9,14 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "https://gasoline-sys.onrender.com",
+      "http://localhost:5173/liquidation-history",
+    ],
+  }),
+);
 app.use(express.json());
 
 connectDB();
