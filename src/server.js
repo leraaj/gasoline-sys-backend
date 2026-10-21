@@ -9,12 +9,19 @@ dotenv.config();
 
 const app = express();
 
+const allowedOrigins = [
+  "https://gasoline-sys.onrender.com",
+  "http://localhost:5173",
+];
+
 app.use(
   cors({
-    origin: ["https://gasoline-sys.onrender.com", "http://localhost:5173"],
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    credentials: true,
   }),
 );
-app.use(express.json());
+se(express.json());
 
 connectDB();
 
